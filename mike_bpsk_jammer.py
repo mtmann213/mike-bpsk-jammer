@@ -80,7 +80,8 @@ def save_iq_to_file(filename, i_data, q_data):
     iq_data.tofile(filename)
     print(f"IQ data saved to '{filename}' as interleaved floats.")
 
-if __name__ == "__main__": #This block of code will only execute when the script is run directly (not when imported as a module).
+if __name__ == "__main__": #This block of code will only execute when the script is run directly (not when imported as a module).100
+
     pulse_width_input_us = float(input("Enter the pulse width for the jamming signal (in microseconds): "))
     duty_cycle_input = float(input("Enter the duty cycle for the jamming signal (0.0 to 1.0): "))
 
@@ -88,7 +89,7 @@ if __name__ == "__main__": #This block of code will only execute when the script
     bit_duration = 8.0 / 32000.0  # 0.00025 seconds
     sampling_rate = 32000.0  # Hz
     bandwidth = 4000.0  # Hz
-    output_filename = "mike_bpsk_jammer_duty_cycle.iq"
+    output_filename = "mike_bpsk_jammer.iq"
 
     # Generate the IQ data with duty cycling
     i_data, q_data = create_bpsk_jammer_iq_duty_cycle(bit_duration, sampling_rate, bandwidth, pulse_width_input_us, duty_cycle_input)
